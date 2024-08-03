@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+// sort posts by date in descending order
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -15,9 +16,6 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      /* Include CSS here */
-    </style>
   </head>
   <body>
     <Header />
@@ -46,74 +44,72 @@ const posts = (await getCollection('blog')).sort(
   </body>
 </html>
 
-
 <style>
-main {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+  main {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+  }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+  ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
 
-ul li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  ul li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-ul li:last-child {
-    border-bottom: none;
-}
+  ul li:last-child {
+      border-bottom: none;
+  }
 
-ul li:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  ul li:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-.post-link {
-    display: flex;
-    text-decoration: none;
-    color: #333; /* Dark gray color for the text */
-    transition: color 0.3s ease;
-    width: 100%;
-}
+  .post-link {
+      display: flex;
+      text-decoration: none;
+      color: #333; /* Dark gray color for the text */
+      transition: color 0.3s ease;
+      width: 100%;
+  }
 
-.post-link:hover .post-title {
-    color: #6b21a8; /* Purple color for the title on hover */
-}
+  .post-link:hover .post-title {
+      color: #6b21a8; /* Purple color for the title on hover */
+  }
 
-.post-image {
-    width: 150px;
-    height: auto;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-}
+  .post-image {
+      width: 150px;
+      height: auto;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+  }
 
-.post-content {
-    flex: 1;
-}
+  .post-content {
+      flex: 1;
+  }
 
-.post-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333; /* Dark gray color for the title */
-    transition: color 0.3s ease;
-}
+  .post-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333; /* Dark gray color for the title */
+      transition: color 0.3s ease;
+  }
 
-.post-date {
-    margin: 0;
-    color: #666; /* Medium gray color for the date */
-    font-size: 0.875rem; /* Slightly smaller font size for the date */
-}
-
+  .post-date {
+      margin: 0;
+      color: #666; /* Medium gray color for the date */
+      font-size: 0.875rem; /* Slightly smaller font size for the date */
+  }
 </style>
