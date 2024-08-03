@@ -13,61 +13,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-      main {
-        width: 65%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 1em;
-      }
-    
-      .hero-image {
-        width: 100%;
-        margin-bottom: 1em;
-      }
-    
-      .hero-image img {
-        width: 100%; /* Ajusta la imagen al ancho del contenedor */
-        max-height: 400px; /* Limita la altura de la imagen para mantenerla más pequeña */
-        object-fit: cover; /* Cubre el área del contenedor sin distorsionar la imagen */
-        display: block;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-      }
-    
-      .prose {
-        margin: auto;
-        padding: 1em;
-        color: #333; /* Color del texto */
-      }
-    
-      .title {
-        margin-bottom: 1.5em;
-        padding: 1em 0;
-        text-align: left; /* Título alineado a la izquierda */
-        line-height: 1.4; /* Espacio entre líneas */
-      }
-    
-      .title h1 {
-        margin: 0;
-        font-size: 2rem; /* Tamaño del título */
-      }
-    
-      .date {
-        color: #666; /* Color gris para la fecha */
-      }
-    
-      .last-updated-on {
-        font-style: italic;
-      }
-    
-      hr {
-        border: 0;
-        border-top: 2px solid #ddd; /* Línea horizontal delgada */
-        margin: 1em 0;
-      }
-    </style>
-    
 	</head>
 
 	<body>
@@ -99,3 +44,61 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
+<style>
+  main {
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    width: 65%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .hero-image img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    max-height: 400px; /* Limita la altura de la imagen para mantenerla más pequeña */
+    object-fit: cover; /* Cubre el área del contenedor sin distorsionar la imagen */
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+
+  .prose {
+    margin: auto;
+    padding: 1em;
+    color: #333; /* Color del texto */
+  }
+
+  .title {
+    margin-bottom: 1.5em;
+    padding: 1em 0;
+    text-align: left; /* Título alineado a la izquierda */
+    line-height: 1.4; /* Espacio entre líneas */
+  }
+
+  .title h1 {
+    margin: 0;
+    font-size: 2rem; /* Tamaño del título */
+  }
+
+  .date {
+    color: #666; /* Color gris para la fecha */
+  }
+
+  .last-updated-on {
+    font-style: italic;
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px solid #ddd; /* Línea horizontal delgada */
+    margin: 1em 0;
+  }
+</style>
